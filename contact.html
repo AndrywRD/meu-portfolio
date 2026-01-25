@@ -143,7 +143,11 @@
                 
                 <div id="form-messages"></div>
                 
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?form-submitted=true" class="space-y-6">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                    </p>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-semibold text-zinc-100 mb-2">Seu Nome *</label>
@@ -294,18 +298,27 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
-                    
+
                     if (!validateForm()) return;
-                    
+
                     submitText.textContent = 'Enviando...';
                     submitBtn.disabled = true;
-                    
+
                     try {
-                        await new Promise(resolve => setTimeout(resolve, 1500));
-                        showFormMessage('success', 'Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                        contactForm.reset();
-                        charCount.textContent = '0';
-                        budgetField.classList.add('hidden');
+                        const formData = new FormData(contactForm);
+                        const response = await fetch(contactForm.action || '/', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        if (response.ok) {
+                            showFormMessage('success', 'Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                            contactForm.reset();
+                            charCount.textContent = '0';
+                            budgetField.classList.add('hidden');
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
                     } catch (error) {
                         showFormMessage('error', 'Erro ao enviar mensagem. Por favor, tente novamente ou use o email direto.');
                     } finally {
