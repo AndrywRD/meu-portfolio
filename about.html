@@ -41,9 +41,20 @@
                     <!-- Avatar Column -->
                     <div class="lg:w-2/5">
                         <div class="animate-float">
-                            <div class="w-64 h-64 md:w-80 md:h-80 mx-auto bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-5xl md:text-6xl font-black mb-8 relative overflow-hidden text-zinc-950">
-                                <span class="relative z-10">AR</span>
-                                <div class="absolute inset-0 animate-pulse-glow bg-gradient-to-br from-indigo-600/30 via-purple-600/30 to-indigo-600/30 rounded-full"></div>
+                            <!-- Profile Image Container -->
+                            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mb-8">
+                                <!-- Imagem Principal -->
+                                <img 
+                                    src="./src/assets/images/profile/andryw-avatar.png" 
+                                    alt="Andryw Ruhan - Desenvolvedor Python"
+                                    class="w-full h-full object-cover rounded-full border-4 border-indigo-600/30 transition-all duration-300 hover:border-indigo-600/60 hover:scale-105"
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                                >
+                                <!-- Fallback se imagem não carregar -->
+                                <div class="w-full h-full bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-5xl md:text-6xl font-black text-zinc-950 relative overflow-hidden" style="display: none;">
+                                    <span class="relative z-10">AR</span>
+                                    <div class="absolute inset-0 animate-pulse-glow bg-gradient-to-br from-indigo-600/30 via-purple-600/30 to-indigo-600/30 rounded-full"></div>
+                                </div>
                             </div>
                             
                             <!-- Quick Stats -->
