@@ -363,7 +363,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - GitHub: [@andrywRD](https://github.com/andrywRD)
 - LinkedIn: [Andryw Ruhan](https://linkedin.com/in/andryw-ruhan)
 - Email: andrywruhandavid@gmail.com
-- Portfolio: [andrywruhan.dev](https://andrywruhan.dev)
+- Portfolio: [andrywruhan.dev](https://andrywruhan.netlify.app/)
 
 
 ##  Notas Técnicas
