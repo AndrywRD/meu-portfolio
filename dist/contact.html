@@ -182,7 +182,8 @@
                 
                 <div id="form-messages"></div>
                 
-                <form id="contact-form" class="space-y-6">
+                <form name="contact" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contact">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-semibold text-zinc-100 mb-2">Seu Nome *</label>
@@ -293,6 +294,7 @@
         </div>
         
     </div>
+
 </footer>
 
     <!-- JavaScript -->
