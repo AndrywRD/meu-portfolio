@@ -394,9 +394,3 @@ Criei um build system customizado porque:
 4. **Performance**: Zero overhead, apenas o necessário
 
 ---
-
-<div align="center">
-
-** Se este projeto te ajudou, considere dar uma estrela!**
-
-</div>
