@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Andryw Ruhan - Desenvolvedor Python & Criador Digital">
+    <title>Projetos | Andryw Ruhan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    
+    <style>
+        .progress-bar {
+            height: 3px;
+            background: linear-gradient(90deg, rgb(129 140 248) 0%, rgb(99 102 241) 100%);
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300 antialiased">
+    
+    <!-- HEADER (Component) -->
+    <!-- 
+  COMPONENTE: Navigation
+  Responsabilidade: Header e menu de navegação
+  Reutilizado em: Todas as páginas
+-->
+
+<header class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-800 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/index.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">
+                AR
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="home">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="projects">Projetos</a></li>
+                <li><a href="/about.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="about">Sobre</a></li>
+                <li><a href="/contact.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="contact">Contato</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-zinc-800 rounded-lg transition" aria-label="Menu">
+                <svg class="w-6 h-6 text-zinc-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <ul class="pt-4 pb-2 space-y-2 border-t border-zinc-800 mt-4">
+                <li><a href="/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                <li><a href="/about.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                <li><a href="/contact.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <main class="pt-24">
+        
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="max-w-5xl">
+                
+                <div class="flex items-center gap-2 text-sm text-zinc-400 mb-8">
+                    <span>~</span>
+                    <span>/</span>
+                    <span>projetos</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-bold text-white mb-8 leading-tight">
+                    Projetos
+                </h1>
+                
+                <p class="text-2xl md:text-3xl text-zinc-300 max-w-3xl mb-12 leading-relaxed">
+                    Projetos autorais focados em desenvolvimento de software, lógica de negócio e aplicações práticas em Python.
+                </p>
+                
+            </div>
+        </section>
+
+        <!-- Projetos -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            
+            <!-- Filter -->
+            <div class="flex items-center justify-between mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    Todos os Projetos
+                </h2>
+                
+                <div class="flex gap-2">
+                    <button class="filter-btn btn-primary text-sm" data-filter="all" onclick="filterProjects('all')">
+                        Todos
+                    </button>
+                    <button class="filter-btn btn-secondary text-sm" data-filter="branding" onclick="filterProjects('branding')">
+                        Branding
+                    </button>
+                    <button class="filter-btn btn-secondary text-sm" data-filter="dev" onclick="filterProjects('dev')">
+                        Dev
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Grid de Projetos -->
+            <div id="projects-grid" class="grid md:grid-cols-2 gap-6">
+                
+                <!-- Súbita Studio -->
+                <article class="card overflow-hidden hover-lift group" data-category="branding">
+                    
+                    <div class="relative h-80 bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-cyan-500/10 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">✨</div>
+                            <div class="text-2xl font-bold text-white">SÚBITA</div>
+                            <div class="text-sm text-zinc-400 mt-2">Studio</div>
+                        </div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-zinc-800">
+                            <div class="progress-bar" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-zinc-100 mb-2 group-hover:text-indigo-400 transition">
+                                    Súbita Studio
+                                </h3>
+                                <p class="text-sm text-zinc-400">
+                                    2025 · Branding
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-medium">
+                                PLANEJAMENTO
+                            </span>
+                        </div>
+                        
+                        <p class="text-zinc-300 leading-relaxed mb-6">
+                            Projeto conceitual multidisciplinar, explorando identidade visual, construção de marca e planejamento criativo.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-indigo-400">branding</span>
+                            <span class="text-xs text-zinc-400">streetwear</span>
+                            <span class="text-xs text-zinc-400">projeto-conceitual</span>
+                        </div>
+                        
+                        <a href="/pages/projects/subita-studio.html" 
+                           class="flex items-center justify-between w-full py-3 px-6 bg-zinc-800 hover:bg-indigo-600 text-zinc-100 hover:text-white rounded-lg font-medium transition group/btn">
+                            <span>Ver Projeto Completo</span>
+                            <svg class="w-5 h-5 transform group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Mercante João Paulo -->
+                <article class="card overflow-hidden hover-lift group" data-category="dev">
+                    
+                    <div class="relative h-80 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-cyan-500/10 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🤖</div>
+                            <div class="text-lg text-zinc-400">Discord RPG Bot</div>
+                        </div>
+                        
+                        <div class="absolute bottom-0 left-0 right-0 h-1 bg-zinc-800">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-semibold text-zinc-100 mb-2 group-hover:text-indigo-400 transition">
+                                    Mercante João Paulo
+                                </h3>
+                                <p class="text-sm text-zinc-400">
+                                    2025 · Python
+                                </p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-600/10 text-green-400 rounded-lg text-xs font-medium">
+                                EM DESENVOLVIMENTO
+                            </span>
+                        </div>
+                        
+                        <p class="text-zinc-300 leading-relaxed mb-6">
+                            Bot Discord desenvolvido em Python, com arquitetura modular, sistema de economia, inventário, cartas colecionáveis e ranking, utilizando persistência de dados e eventos assíncronos.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs text-indigo-400">python</span>
+                            <span class="text-xs text-zinc-400">discord.py</span>
+                            <span class="text-xs text-zinc-400">rpg</span>
+                        </div>
+                        
+                        <a href="/pages/projects/discord-bot.html" 
+                           class="flex items-center justify-between w-full py-3 px-6 bg-zinc-800 hover:bg-indigo-600 text-zinc-100 hover:text-white rounded-lg font-medium transition group/btn">
+                            <span>Ver Projeto Completo</span>
+                            <svg class="w-5 h-5 transform group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- Próximo Projeto -->
+                <article class="card border-2 border-dashed flex flex-col items-center justify-center p-16 text-center" data-category="dev">
+                    <div class="text-7xl mb-6 opacity-50">🚀</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-4">Próximo Projeto</h3>
+                    <p class="text-zinc-300 mb-8 max-w-xs leading-relaxed">
+                        Espaço reservado para novos projetos em fase de concepção e desenvolvimento.
+                    </p>
+                    <a href="/contact.html" 
+                       class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition font-medium">
+                        <span>Propor colaboração</span>
+                        <span>→</span>
+                    </a>
+                </article>
+                
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="card p-12 md:p-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Vamos conversar sobre uma oportunidade?
+                </h2>
+                <p class="text-xl text-zinc-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Estou em busca da minha primeira oportunidade profissional em desenvolvimento de software.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact.html" class="btn-primary">
+                        Entrar em Contato
+                    </a>
+                    <a href="/index.html" class="btn-secondary">
+                        Voltar para Início
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER (Component) -->
+    <!-- 
+  COMPONENTE: Footer
+  Responsabilidade: Rodapé do site
+  Reutilizado em: Todas as páginas
+-->
+
+<footer class="border-t border-zinc-800 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-3 gap-12 mb-8">
+            
+            <div>
+                <div class="text-xl font-bold text-white mb-4">ANDRYW RUHAN</div>
+                <p class="text-zinc-400 mb-4 leading-relaxed">
+                    Desenvolvedor Python em formação · Foco em Back-end.
+                </p>
+                <p class="text-sm text-zinc-400">Curitiba, PR · Brasil</p>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">NAVEGAÇÃO</h3>
+                <ul class="space-y-2">
+                    <li><a href="/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                    <li><a href="/pages/projects/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                    <li><a href="/about.html" class="text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                    <li><a href="/contact.html" class="text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">SOCIAL</h3>
+                <ul class="space-y-2">
+                    <li><a href="https://github.com/andrywRD" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-indigo-400 transition">GitHub</a></li>
+                    <li><a href="mailto:andrywruhandavid@gmail.com" class="text-zinc-400 hover:text-indigo-400 transition">Email</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="border-t border-zinc-800 pt-8 text-center">
+            <p class="text-sm text-zinc-400">© 2026 Andryw Ruhan · Súbita Studio</p>
+        </div>
+        
+    </div>
+</footer>
+
+    <!-- JavaScript -->
+    <script src="/src/scripts/navigation.js" defer></script>
+    <script src="/src/scripts/utils.js" defer></script>
+    <script>
+        // Filter projects
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('[data-category]');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update button states
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('btn-secondary');
+                    btn.classList.add('btn-primary');
+                } else {
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-secondary');
+                }
+            });
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

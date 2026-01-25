@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Tags Essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com Andryw Ruhan - Desenvolvedor Python disponível para projetos e colaborações">
+    <title>Contato | Andryw Ruhan</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Estilos Customizados -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+    
+    <style>
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: rgb(129 140 248);
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-message.success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgb(16 185 129);
+            color: rgb(16 185 129);
+        }
+        
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgb(239 68 68);
+            color: rgb(239 68 68);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(16 185 129);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-300 antialiased">
+    
+    <!-- HEADER (Component) -->
+    <!-- @include navigation -->
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-6 py-4 pt-24">
+        <div class="flex items-center gap-2 text-sm text-zinc-400">
+            <span>~</span>
+            <span>/</span>
+            <span>contato</span>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 py-24">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Vamos Conversar</h1>
+                <p class="text-xl text-zinc-300 leading-relaxed mb-8">
+                    Estou aberto a oportunidades de estágio, colaborações técnicas e conversas sobre desenvolvimento de software, especialmente em Python e back-end.
+                </p>
+                
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-zinc-900 border border-zinc-800 rounded-lg">
+                    <span class="status-indicator"></span>
+                    <span class="text-sm font-medium text-zinc-100">Disponível para oportunidades e processos seletivos</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Cards -->
+        <section class="max-w-7xl mx-auto px-6 pb-24">
+            <div class="grid md:grid-cols-3 gap-6">
+                
+                <div class="card p-6 hover-lift">
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Email</h3>
+                    <p class="text-zinc-300 leading-relaxed mb-6">
+                        Para contato profissional, oportunidades, processos seletivos ou conversas técnicas
+                    </p>
+                    <a href="mailto:andrywruhandavid@gmail.com" class="text-indigo-400 hover:text-indigo-300 font-medium transition inline-flex items-center gap-2 break-all text-sm">
+                        andrywruhandavid@gmail.com
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-zinc-400 mt-4">Resposta em até 24–48 horas</p>
+                </div>
+                
+                <div class="card p-6 hover-lift">
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">GitHub</h3>
+                    <p class="text-zinc-300 leading-relaxed mb-6">
+                        Para ver meu código, contribuições e projetos open-source
+                    </p>
+                    <a href="https://github.com/andrywRD" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-medium transition inline-flex items-center gap-2">
+                        github.com/andrywRD
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-zinc-400 mt-4">Projetos autorais, estudos e aplicações práticas</p>
+                </div>
+                
+                <div class="card p-6 hover-lift">
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">LinkedIn</h3>
+                    <p class="text-zinc-300 leading-relaxed mb-6">
+                        Para conexões profissionais e oportunidades de carreira
+                    </p>
+                    <a href="https://www.linkedin.com/in/andryw-ruhan-5abb43204/?originalSubdomain=br" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-medium transition inline-flex items-center gap-2">
+                        Ver perfil
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-zinc-400 mt-4">Perfil profissional em constante atualização</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="py-24 bg-zinc-900/30">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Entre em Contato</h2>
+                    <p class="text-lg text-zinc-300 leading-relaxed">
+                        Utilize o formulário abaixo para oportunidades, dúvidas técnicas ou feedback profissional.
+                    </p>
+                </div>
+                
+                <div id="form-messages"></div>
+                
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-zinc-100 mb-2">Seu Nome *</label>
+                            <input type="text" id="name" name="name" required class="form-input w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 px-4 text-zinc-100 transition" placeholder="Como prefere ser chamado">
+                            <div class="text-sm text-red-400 mt-1 hidden" id="name-error"></div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-zinc-100 mb-2">Seu Email *</label>
+                            <input type="email" id="email" name="email" required class="form-input w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 px-4 text-zinc-100 transition" placeholder="seu@email.com">
+                            <div class="text-sm text-red-400 mt-1 hidden" id="email-error"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-semibold text-zinc-100 mb-2">Assunto *</label>
+                        <select id="subject" name="subject" required class="form-select w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 px-4 text-zinc-100 transition">
+                            <option value="" disabled selected>Selecione o motivo do contato</option>
+                            <option value="Oportunidade">Oportunidade / Processo Seletivo</option>
+                            <option value="Projeto">Proposta de Projeto</option>
+                            <option value="Colaboração">Colaboração</option>
+                            <option value="Orçamento">Solicitação de Orçamento</option>
+                            <option value="Dúvida">Dúvida Técnica</option>
+                            <option value="Feedback">Feedback sobre Portfólio</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                        <div class="text-sm text-red-400 mt-1 hidden" id="subject-error"></div>
+                    </div>
+                    
+                    <div id="budget-field" class="hidden">
+                        <label for="budget" class="block text-sm font-semibold text-zinc-100 mb-2">Orçamento Previsto (opcional)</label>
+                        <select id="budget" name="budget" class="form-select w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 px-4 text-zinc-100 transition">
+                            <option value="" selected>Selecione uma faixa</option>
+                            <option value="Abaixo de R$ 1.000">Abaixo de R$ 1.000</option>
+                            <option value="R$ 1.000 - R$ 3.000">R$ 1.000 - R$ 3.000</option>
+                            <option value="R$ 3.000 - R$ 5.000">R$ 3.000 - R$ 5.000</option>
+                            <option value="R$ 5.000 - R$ 10.000">R$ 5.000 - R$ 10.000</option>
+                            <option value="Acima de R$ 10.000">Acima de R$ 10.000</option>
+                            <option value="A definir">A definir</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-zinc-100 mb-2">Sua Mensagem *</label>
+                        <textarea id="message" name="message" rows="6" required class="form-textarea w-full bg-zinc-900 border border-zinc-800 rounded-lg py-3 px-4 text-zinc-100 transition resize-none" placeholder="Descreva seu projeto, ideia ou pergunta com detalhes..."></textarea>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="text-sm text-red-400 hidden" id="message-error"></div>
+                            <div class="text-sm text-zinc-400">
+                                <span id="char-count">0</span>/1000 caracteres
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" id="submit-btn" class="btn-primary w-full">
+                            <span id="submit-text">Enviar Mensagem</span>
+                        </button>
+                        <p class="text-sm text-zinc-400 text-center mt-3">* Campos obrigatórios. Resposta em até 48 horas úteis.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- FOOTER (Component) -->
+    <!-- @include footer -->
+
+    <!-- JavaScript -->
+    <script src="/src/scripts/navigation.js" defer></script>
+    <script src="/src/scripts/utils.js" defer></script>
+    <script>
+        // Form handling (mantido inline pois é específico desta página)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const formMessages = document.getElementById('form-messages');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitText = document.getElementById('submit-text');
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+            const subjectSelect = document.getElementById('subject');
+            const budgetField = document.getElementById('budget-field');
+            
+            // Character counter
+            if (messageTextarea && charCount) {
+                messageTextarea.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                    if (this.value.length > 1000) {
+                        this.value = this.value.substring(0, 1000);
+                        charCount.textContent = 1000;
+                    }
+                });
+            }
+            
+            // Show/hide budget field
+            if (subjectSelect && budgetField) {
+                subjectSelect.addEventListener('change', function() {
+                    if (this.value === 'Projeto' || this.value === 'Orçamento') {
+                        budgetField.classList.remove('hidden');
+                    } else {
+                        budgetField.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Form validation
+            function validateForm() {
+                let isValid = true;
+                document.querySelectorAll('[id$="-error"]').forEach(el => el.classList.add('hidden'));
+                
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageTextarea = document.getElementById('message');
+                
+                if (!nameInput.value.trim()) {
+                    showError('name-error', 'Por favor, insira seu nome');
+                    isValid = false;
+                }
+                
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
+                    showError('email-error', 'Por favor, insira um email válido');
+                    isValid = false;
+                }
+                
+                if (!messageTextarea.value.trim() || messageTextarea.value.trim().length < 10) {
+                    showError('message-error', 'A mensagem precisa ter pelo menos 10 caracteres');
+                    isValid = false;
+                }
+                
+                return isValid;
+            }
+            
+            function showError(errorId, message) {
+                const errorElement = document.getElementById(errorId);
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    errorElement.classList.remove('hidden');
+                }
+            }
+            
+            function showFormMessage(type, message) {
+                formMessages.innerHTML = `<div class="form-message ${type}">${message}</div>`;
+                setTimeout(() => formMessages.innerHTML = '', 5000);
+            }
+            
+            // Form submit
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    if (!validateForm()) return;
+                    
+                    submitText.textContent = 'Enviando...';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        await new Promise(resolve => setTimeout(resolve, 1500));
+                        showFormMessage('success', 'Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                        contactForm.reset();
+                        charCount.textContent = '0';
+                        budgetField.classList.add('hidden');
+                    } catch (error) {
+                        showFormMessage('error', 'Erro ao enviar mensagem. Por favor, tente novamente ou use o email direto.');
+                    } finally {
+                        submitText.textContent = 'Enviar Mensagem';
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

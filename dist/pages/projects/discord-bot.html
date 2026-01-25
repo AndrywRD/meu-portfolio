@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: Mercante João Paulo - Bot Discord com sistema RPG completo">
+    <title>Mercante João Paulo | Discord Bot RPG</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="bg-zinc-950 text-zinc-300 antialiased">
+    
+    <!-- HEADER -->
+    <!-- 
+  COMPONENTE: Navigation
+  Responsabilidade: Header e menu de navegação
+  Reutilizado em: Todas as páginas
+-->
+
+<header class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-800 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/index.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">
+                AR
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="home">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="projects">Projetos</a></li>
+                <li><a href="/about.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="about">Sobre</a></li>
+                <li><a href="/contact.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="contact">Contato</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-zinc-800 rounded-lg transition" aria-label="Menu">
+                <svg class="w-6 h-6 text-zinc-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <ul class="pt-4 pb-2 space-y-2 border-t border-zinc-800 mt-4">
+                <li><a href="/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                <li><a href="/about.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                <li><a href="/contact.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- BREADCRUMB -->
+    <div class="max-w-7xl mx-auto px-6 py-8 pt-24">
+        <nav class="text-zinc-400 text-sm" aria-label="Navegação estrutural">
+            <a href="../../index.html" class="hover:text-indigo-400 transition-colors">Início</a>
+            <span class="mx-2">/</span>
+            <a href="../projects/index.html" class="hover:text-indigo-400 transition-colors">Projetos</a>
+            <span class="mx-2">/</span>
+            <span class="text-zinc-500">Mercante João Paulo</span>
+        </nav>
+    </div>
+
+    <!-- PROJECT HERO -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="fade-in">
+            <span class="inline-block px-4 py-2 bg-indigo-600/10 text-indigo-400 rounded-lg text-sm font-semibold mb-6 border border-indigo-600/20">
+                EM DESENVOLVIMENTO
+            </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in">
+            Mercante João Paulo
+        </h1>
+        
+        <p class="text-xl text-zinc-400 mb-8 fade-in max-w-3xl leading-relaxed">
+            Projeto autoral desenvolvido em Python, focado na criação de um bot Discord escalável, com sistemas de economia, inventário, achievements e persistência de dados.
+        </p>
+        
+        <div class="fade-in mb-12">
+            <p class="text-sm text-zinc-400">
+                Previsão de lançamento: <span class="text-indigo-400 font-semibold">4 semanas</span>
+            </p>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3 mb-12 fade-in">
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Python</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Discord.py</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">SQLite</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">POO</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Arquitetura em Camadas</span>
+        </div>
+
+        <!-- Project Image -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden mb-12 hover:border-zinc-700 transition">
+            <div class="relative h-96 bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="text-8xl mb-6" aria-hidden="true">🎮</div>
+                    <div class="text-3xl font-bold text-white mb-2">MERCANTE JOÃO PAULO</div>
+                    <div class="text-sm text-zinc-400">Discord Bot RPG</div>
+                </div>
+                
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-zinc-800">
+                    <div class="h-full bg-indigo-600" style="width: 65%"></div>
+                </div>
+            </div>
+            
+            <div class="p-8 text-center">
+                <p class="text-zinc-400 text-sm mb-2">Preview do bot em desenvolvimento</p>
+                <p class="text-xs text-zinc-500">(Screenshots serão adicionadas em breve)</p>
+            </div>
+        </div>
+
+        <!-- Project Metadata -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">Discord Bot</div>
+                <div class="text-sm text-zinc-400">Tipo de Projeto</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-indigo-400 mb-2">Beta</div>
+                <div class="text-sm text-zinc-400">Status Atual</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">2025</div>
+                <div class="text-sm text-zinc-400">Início</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">Full</div>
+                <div class="text-sm text-zinc-400">Dev Stack</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT CONTENT -->
+    <section class="max-w-5xl mx-auto px-6 space-y-24 pb-24">
+
+        <!-- CONTEXTO -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Contexto do Projeto
+            </h2>
+            <div class="space-y-4">
+            <p class="text-zinc-400 leading-relaxed">
+                Este bot Discord foi desenvolvido como um projeto prático para aplicar conceitos de programação orientada a objetos, organização de código e lógica de negócio. O foco principal foi criar uma base sólida, modular e de fácil manutenção, permitindo a expansão contínua de funcionalidades.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed">
+                O sistema inclui economia interna, inventário de itens, sistema de cartas colecionáveis e achievements, todos integrados a uma camada de persistência de dados. As funcionalidades foram projetadas de forma desacoplada, facilitando testes, manutenção e futuras melhorias.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed">
+                Durante o desenvolvimento, enfrentei desafios relacionados a controle de estado, consistência de dados e escalabilidade do projeto, o que contribuiu diretamente para meu amadurecimento técnico e compreensão de sistemas reais.
+            </p>
+            </div>
+        </div>
+
+        <!-- DESAFIOS -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Desafios Técnicos
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">⚔️</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Sistema de Batalhas</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Desenvolver um sistema de auto-battle por turnos equilibrado e estratégico, considerando atributos base das cartas, habilidades evolutivas e progressão de nível. O desafio foi criar combates dinâmicos que funcionassem tanto em PvE quanto PvP.
+                    </p>
+                </div>
+                
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">🏆</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Sistema de Achievements</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Criar uma estrutura sólida de conquistas que rastreasse múltiplas ações do jogador (batalhas, economia, coleção) e recompensasse adequadamente com títulos e moedas. A complexidade estava em garantir que os achievements fossem desafiadores mas alcançáveis.
+                    </p>
+                </div>
+                
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">🎴</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Gacha e Progressão</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Implementar um sistema de banners com cartas que possuem atributos e habilidades que evoluem com o nível. Equilibrar as taxas de drop, raridades e poder das cartas foi essencial para manter o jogo justo e interessante.
+                    </p>
+                </div>
+                
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">💰</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Economia Balanceada</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Criar uma economia virtual funcional onde jogadores ganham moedas através de batalhas, comandos diários e achievements, mantendo um equilíbrio que incentive o engajamento sem criar inflação excessiva.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ARQUITETURA -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Arquitetura do Sistema
+            </h2>
+            
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl mb-8">
+                <h3 class="text-xl font-semibold text-zinc-100 mb-8 text-center">Estrutura em Camadas</h3>
+                
+                <div class="space-y-6">
+                    <!-- Camada 1 -->
+                    <div class="bg-indigo-600/10 border-2 border-indigo-600 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-indigo-400 text-lg">Discord.py (Interface)</h4>
+                            <span class="text-sm text-zinc-400 bg-zinc-900 px-3 py-1 rounded-lg border border-zinc-800">Camada de Apresentação</span>
+                        </div>
+                        <p class="text-sm text-zinc-300">Comandos slash • eventos • interações com usuários</p>
+                    </div>
+                    
+                    <div class="text-center text-2xl text-zinc-600" aria-hidden="true">↓</div>
+                    
+                    <!-- Camada 2 -->
+                    <div class="bg-purple-600/10 border-2 border-purple-600 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-purple-400 text-lg">Lógica de Negócio (POO)</h4>
+                            <span class="text-sm text-zinc-400 bg-zinc-900 px-3 py-1 rounded-lg border border-zinc-800">Camada de Aplicação</span>
+                        </div>
+                        <p class="text-sm text-zinc-300">Classes: Player • Card • Battle • Achievement • Banner • Economy</p>
+                    </div>
+                    
+                    <div class="text-center text-2xl text-zinc-600" aria-hidden="true">↓</div>
+                    
+                    <!-- Camada 3 -->
+                    <div class="bg-indigo-600/10 border-2 border-indigo-600 rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-indigo-400 text-lg">SQLite (Persistência)</h4>
+                            <span class="text-sm text-zinc-400 bg-zinc-900 px-3 py-1 rounded-lg border border-zinc-800">Camada de Dados</span>
+                        </div>
+                        <p class="text-sm text-zinc-300">Tabelas: users • cards • inventory • battles • achievements • transactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-zinc-300 leading-relaxed">
+                A arquitetura foi projetada seguindo princípios de POO e separação de responsabilidades, facilitando manutenção e futuras expansões. Cada camada tem sua função bem definida, permitindo modificações isoladas sem impactar o sistema como um todo.
+            </p>
+        </div>
+
+        <!-- FUNCIONALIDADES -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Principais Funcionalidades
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Sistema de Gacha -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">🎴</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Sistema de Gacha por Banners</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-600/20">
+                                    CORE
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Os jogadores podem invocar cartas através de banners temáticos. Cada carta possui atributos base (ataque, defesa, HP) e habilidades únicas que se desenvolvem conforme o nível da carta aumenta. O sistema de raridade garante equilíbrio entre acessibilidade e cartas premium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Batalhas -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">⚔️</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Sistema de Auto-Battle</h3>
+                                <span class="px-3 py-1 bg-purple-600/10 text-purple-400 rounded-lg text-xs font-semibold border border-purple-600/20">
+                                    STRATEGY
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Combates automáticos por turnos que consideram estratégia e composição do time. Disponível em dois modos: PvE (contra inimigos controlados pelo bot) e PvP (duelos entre jogadores). As batalhas recompensam com experiência, moedas e itens baseados no desempenho.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economia -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">💰</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Economia Virtual</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-600/20">
+                                    ECONOMY
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Sistema monetário completo onde jogadores ganham moedas através de batalhas, comando /daily, e conquistas. A economia é balanceada para incentivar engajamento diário sem criar vantagens excessivas. Inclui sistema de transações seguras e histórico de gastos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">🏆</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Sistema de Conquistas</h3>
+                                <span class="px-3 py-1 bg-purple-600/10 text-purple-400 rounded-lg text-xs font-semibold border border-purple-600/20">
+                                    PROGRESSION
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Achievements que rastreiam progresso do jogador em diferentes aspectos do jogo. Ao completar conquistas, jogadores ganham títulos exclusivos, moedas bônus e experiência. O sistema incentiva exploração de todas as funcionalidades do bot.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ranking -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">📊</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Sistema de Rankings</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-600/20">
+                                    COMPETITIVE
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Leaderboards que classificam jogadores por diferentes métricas: riqueza acumulada, vitórias em batalha, coleção de cartas e achievements completados. O sistema de ranking cria competição saudável e objetivos de longo prazo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STACK TÉCNICO -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Stack Técnico
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <h3 class="font-semibold mb-6 text-indigo-400 text-lg">Backend</h3>
+                    <ul class="space-y-3 text-zinc-300">
+                        <li><strong>Python</strong> — lógica de negócio, POO e organização de sistemas</li>
+                        <li><strong>discord.py</strong> — integração com API do Discord e eventos assíncronos</li>
+                        <li><strong>Programação Orientada a Objetos</strong> — separação de responsabilidades e modularidade</li>
+                        <li><strong>Persistência de Dados</strong> — armazenamento e gerenciamento de estado</li>
+                        <li><strong>Git & GitHub</strong> — versionamento e controle de alterações</li>
+                    </ul>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <h3 class="font-semibold mb-6 text-purple-400 text-lg">Arquitetura</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">POO</span>
+                                <p class="text-sm text-zinc-400">Programação Orientada a Objetos</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">MVC Pattern</span>
+                                <p class="text-sm text-zinc-400">Separação de responsabilidades</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Cogs System</span>
+                                <p class="text-sm text-zinc-400">Modularização de comandos</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <h3 class="font-semibold mb-6 text-indigo-400 text-lg">Planejado</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Cache System</span>
+                                <p class="text-sm text-zinc-400">Otimização de consultas</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Rate Limiting</span>
+                                <p class="text-sm text-zinc-400">Controle de spam</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 mt-1">→</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Cloud Hosting</span>
+                                <p class="text-sm text-zinc-400">Deploy em produção</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRÓXIMOS PASSOS -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Próximos Passos
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="flex items-start gap-6 bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">2</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-zinc-100 text-xl mb-2">Implementação de Cache e Rate Limiting</h3>
+                        <p class="text-zinc-300 leading-relaxed">Adicionar sistemas de otimização para garantir performance quando o bot for público</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex-shrink-0 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center font-bold text-white">3</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-zinc-100 text-xl mb-2">Lançamento Beta Público (4 semanas)</h3>
+                        <p class="text-zinc-300 leading-relaxed">Deploy em servidor cloud e abertura para primeiros usuários externos com monitoramento ativo</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-6 bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white">4</div>
+                    <div class="flex-1">
+                        <h3 class="font-semibold text-zinc-100 text-xl mb-2">Expansão de Funcionalidades</h3>
+                        <p class="text-zinc-300 leading-relaxed">Adicionar guilds/clans, eventos semanais, e sistema de trading entre jogadores</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-12 text-center mt-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Quer testar o bot ou colaborar?
+            </h2>
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                O Mercante João Paulo está em fase de testes privados. Em breve estará disponível para servidores públicos.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="../../contact.html" 
+                   class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition">
+                    Entrar em Contato
+                </a>
+                <a href="../projects/index.html" 
+                   class="px-8 py-4 border border-zinc-700 text-zinc-100 hover:bg-zinc-800 rounded-lg transition">
+                    Ver outros projetos
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <!-- 
+  COMPONENTE: Footer
+  Responsabilidade: Rodapé do site
+  Reutilizado em: Todas as páginas
+-->
+
+<footer class="border-t border-zinc-800 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-3 gap-12 mb-8">
+            
+            <div>
+                <div class="text-xl font-bold text-white mb-4">ANDRYW RUHAN</div>
+                <p class="text-zinc-400 mb-4 leading-relaxed">
+                    Desenvolvedor Python em formação · Foco em Back-end.
+                </p>
+                <p class="text-sm text-zinc-400">Curitiba, PR · Brasil</p>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">NAVEGAÇÃO</h3>
+                <ul class="space-y-2">
+                    <li><a href="/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                    <li><a href="/pages/projects/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                    <li><a href="/about.html" class="text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                    <li><a href="/contact.html" class="text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">SOCIAL</h3>
+                <ul class="space-y-2">
+                    <li><a href="https://github.com/andrywRD" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-indigo-400 transition">GitHub</a></li>
+                    <li><a href="mailto:andrywruhandavid@gmail.com" class="text-zinc-400 hover:text-indigo-400 transition">Email</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="border-t border-zinc-800 pt-8 text-center">
+            <p class="text-sm text-zinc-400">© 2026 Andryw Ruhan · Súbita Studio</p>
+        </div>
+        
+    </div>
+</footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="/src/scripts/navigation.js" defer></script>
+    <script src="/src/scripts/utils.js" defer></script>
+</body>
+</html>

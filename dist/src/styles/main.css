@@ -1,0 +1,207 @@
+/**
+ * ESTILOS PRINCIPAIS DO PORTFÓLIO
+ * Organização: Base → Layout → Componentes → Utilitários
+ * Princípio: Separação de responsabilidades
+ */
+
+/* ========================================
+   1. VARIÁVEIS CSS (Design Tokens)
+   Responsabilidade: Centralizar valores reutilizáveis
+   ======================================== */
+
+:root {
+  /* Cores */
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #18181b;
+  --color-bg-tertiary: #27272a;
+  
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #d4d4d8;
+  --color-text-tertiary: #a1a1aa;
+  
+  --color-accent-primary: #6366f1;
+  --color-accent-hover: #818cf8;
+  
+  --color-border: #3f3f46;
+  
+  /* Espaçamento */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Tipografia */
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  
+  /* Transições */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+
+/* ========================================
+   2. RESET & BASE
+   Responsabilidade: Normalizar comportamento cross-browser
+   ======================================== */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+}
+
+/* Offset para scroll suave com header fixo */
+section {
+  scroll-margin-top: 80px;
+}
+
+
+/* ========================================
+   3. LAYOUT
+   Responsabilidade: Estrutura de páginas
+   ======================================== */
+
+.container {
+  max-width: 1152px; /* 72rem */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+
+/* ========================================
+   4. COMPONENTES
+   Responsabilidade: Elementos reutilizáveis
+   ======================================== */
+
+/* Mobile Menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-base);
+}
+
+.mobile-menu.active {
+  max-height: 500px;
+}
+
+/* Cards */
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-base);
+}
+
+.card:hover {
+  border-color: #52525b; /* zinc-600 */
+}
+
+/* Navegação - Link Ativo */
+.nav-link.active {
+  color: var(--color-accent-primary);
+  font-weight: 500;
+}
+
+/* Botões */
+.btn-primary {
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-primary);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-bg-tertiary);
+}
+
+
+/* ========================================
+   5. UTILITÁRIOS
+   Responsabilidade: Classes de uso único
+   ======================================== */
+
+/* Text Gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Truncate Text */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Visually Hidden (acessibilidade) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ========================================
+   6. RESPONSIVIDADE
+   Responsabilidade: Ajustes mobile-first
+   ======================================== */
+
+/* Tablets */
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  /* Ajustes específicos para telas grandes */
+}

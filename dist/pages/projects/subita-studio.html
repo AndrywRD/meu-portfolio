@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case study: Súbita Studio - Marca multidisciplinar nascida de momentos inesperados">
+    <title>Súbita Studio | Moda, Conexão e Momentos Súbitos</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/animations.css">
+</head>
+<body class="bg-zinc-950 text-zinc-300 antialiased">
+    
+    <!-- HEADER -->
+    <!-- 
+  COMPONENTE: Navigation
+  Responsabilidade: Header e menu de navegação
+  Reutilizado em: Todas as páginas
+-->
+
+<header class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-800 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/index.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">
+                AR
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="home">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="projects">Projetos</a></li>
+                <li><a href="/about.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="about">Sobre</a></li>
+                <li><a href="/contact.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="contact">Contato</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-zinc-800 rounded-lg transition" aria-label="Menu">
+                <svg class="w-6 h-6 text-zinc-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <ul class="pt-4 pb-2 space-y-2 border-t border-zinc-800 mt-4">
+                <li><a href="/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                <li><a href="/about.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                <li><a href="/contact.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <!-- BREADCRUMB -->
+    <div class="max-w-7xl mx-auto px-6 py-8 pt-24">
+        <nav class="text-zinc-400 text-sm" aria-label="Navegação estrutural">
+            <a href="../../index.html" class="hover:text-indigo-400 transition-colors">Início</a>
+            <span class="mx-2">/</span>
+            <a href="../projects/index.html" class="hover:text-indigo-400 transition-colors">Projetos</a>
+            <span class="mx-2">/</span>
+            <span class="text-zinc-500">Súbita Studio</span>
+        </nav>
+    </div>
+
+    <!-- PROJECT HERO -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="fade-in">
+            <span class="inline-block px-4 py-2 bg-purple-600/10 text-purple-400 rounded-lg text-sm font-semibold mb-6 border border-purple-600/20">
+                PLANEJAMENTO
+            </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 fade-in">
+            Súbita Studio
+        </h1>
+        
+        <p class="text-xl text-zinc-400 mb-8 fade-in max-w-3xl leading-relaxed">
+            Marca multidisciplinar nascida de momentos inesperados, unindo moda streetwear conceitual, conexões humanas e criatividade coletiva
+        </p>
+        
+        <div class="fade-in mb-12">
+            <p class="text-sm text-zinc-400">
+                Início da produção: <span class="text-purple-400 font-semibold">Fevereiro 2025</span>
+            </p>
+        </div>
+        
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3 mb-12 fade-in">
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Marca Conceitual</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Moda Streetwear</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Comunidade</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Design Colaborativo</span>
+            <span class="px-4 py-2 bg-zinc-900 border border-zinc-800 text-zinc-100 rounded-lg text-sm">Conexões Humanas</span>
+        </div>
+
+        <!-- Project Image -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden mb-12 hover:border-zinc-700 transition">
+            <div class="relative h-96 bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10 flex items-center justify-center">
+                <div class="text-center">
+                    <div class="text-8xl mb-6" aria-hidden="true">🎨✨</div>
+                    <div class="text-3xl font-bold text-white mb-2">SÚBITA STUDIO</div>
+                    <div class="text-sm text-zinc-400">Branding & Design</div>
+                </div>
+                
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-zinc-800">
+                    <div class="h-full bg-purple-600" style="width: 40%"></div>
+                </div>
+            </div>
+            
+            <div class="p-8">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <div class="w-3 h-3 rounded-full bg-purple-600 animate-pulse"></div>
+                    <p class="text-center text-zinc-400 text-sm">Design Visual em Desenvolvimento</p>
+                </div>
+                <p class="text-center text-xs text-zinc-500 max-w-2xl mx-auto">
+                    A identidade visual da Súbita Studio está sendo criada colaborativamente, refletindo a essência de momentos súbitos e conexões inesperadas.
+                </p>
+            </div>
+        </div>
+
+        <!-- Project Metadata -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">Marca</div>
+                <div class="text-sm text-zinc-400">Tipo de Projeto</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-purple-400 mb-2">Plan</div>
+                <div class="text-sm text-zinc-400">Status Atual</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">2025</div>
+                <div class="text-sm text-zinc-400">Fundação</div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                <div class="text-3xl font-bold text-white mb-2">Co-fund</div>
+                <div class="text-sm text-zinc-400">Meu Papel</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECT CONTENT -->
+    <section class="max-w-5xl mx-auto px-6 space-y-24 pb-24">
+
+        <!-- FILOSOFIA E CONCEITO -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                A Filosofia dos Momentos Súbitos
+            </h2>
+            <div class="space-y-4">
+                <p class="text-base text-zinc-300 leading-relaxed">
+                    A Súbita Studio nasceu da crença de que os momentos mais transformadores surgem do nada. Aquela madrugada às 3h da manhã quando você decide mudar de vida. A ideia genial que brota no meio de uma conversa com amigos. O insight que muda tudo quando menos se espera.
+                </p>
+                
+                <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl my-8">
+                    <div class="flex items-start gap-4">
+                        <div class="text-3xl flex-shrink-0" aria-hidden="true">💫</div>
+                        <div>
+                            <h3 class="font-semibold text-indigo-400 text-lg mb-2">Nosso Norte</h3>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Criar uma marca que capture a essência desses momentos súbitos, transformando-os em peças de roupa, conexões humanas e experiências memoráveis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-base text-zinc-300 leading-relaxed">
+                    Não somos apenas uma marca de roupa. Somos um convite para celebrar a imprevisibilidade da vida, vestir ideias que nascem do acaso e conectar pessoas através de histórias que começam com um simples "e se...".
+                </p>
+            </div>
+        </div>
+
+        <!-- PÚBLICO-ALVO E POSICIONAMENTO -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Para Quem e Por Quê?
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">🎯</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Público Principal</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Jovens adultos (20-30 anos) que valorizam autenticidade, participam de eventos de moda alternativa e festas com identidade própria. Pessoas que usam a roupa como expressão de quem são e no que acreditam.
+                    </p>
+                </div>
+                
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="text-4xl mb-4" aria-hidden="true">🌐</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-3">Expansão de Nichos</h3>
+                    <p class="text-zinc-300 leading-relaxed">
+                        Embora nosso coração esteja no streetwear, acreditamos na conexão entre diferentes mundos. Planejamos dialogar com comunidades de games, basquete, anime e outras tribos urbanas, criando pontes através do design e da narrativa.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIFERENCIAIS -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                O Que Nos Torna Únicos
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">⚡</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Inovação em Arte e Conceito</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-600/20">
+                                    ART
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Nossas estampas não são apenas gráficos - são narrativas visuais. Cada peça conta uma história de momentos inesperados, conexões súbitas e insights que mudam percursos. Trabalhamos com cores vivas, efeitos visuais impactantes e mensagens que ressoam.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">🤝</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Conexões Além das Roupas</h3>
+                                <span class="px-3 py-1 bg-purple-600/10 text-purple-400 rounded-lg text-xs font-semibold border border-purple-600/20">
+                                    COMMUNITY
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Acreditamos que uma marca vai além do produto. Por isso, planejamos criar experiências e espaços de conexão - seja através de eventos presenciais, colaborações com artistas locais ou iniciativas que unam pessoas com interesses similares.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-zinc-700 transition">
+                    <div class="flex items-start gap-6">
+                        <div class="text-5xl flex-shrink-0" aria-hidden="true">🔄</div>
+                        <div class="flex-1">
+                            <div class="flex items-start justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Antena nas Novidades e Eventos</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-xs font-semibold border border-indigo-600/20">
+                                    TRENDS
+                                </span>
+                            </div>
+                            <p class="text-zinc-300 leading-relaxed">
+                                Estamos sempre atentos às novas tendências, eventos culturais e movimentos emergentes. Essa sintonia nos permite criar peças e experiências relevantes, além de participar ativamente das cenas que nos inspiram.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROADMAP -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Jornada da Súbita Studio
+            </h2>
+            
+            <div class="space-y-6">
+                
+                <!-- Fase 1: Atual -->
+                <div class="bg-zinc-900 border-l-4 border-indigo-600 p-6 rounded-2xl">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center font-bold text-white text-xl">1</div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-4 mb-4">
+                                <h3 class="text-xl font-semibold text-zinc-100">Fase 1: Conceito & Design</h3>
+                                <span class="px-3 py-1 bg-indigo-600/10 text-indigo-400 rounded-lg text-sm font-semibold border border-indigo-600/20">
+                                    EM ANDAMENTO
+                                </span>
+                            </div>
+                            <p class="text-zinc-400 text-sm mb-6">
+                                Janeiro 2025 - Presente
+                            </p>
+                            
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-indigo-400 font-bold text-xl mt-1">✓</span>
+                                    <span class="text-zinc-300">Definição da filosofia e valores da marca</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-indigo-400 font-bold text-xl mt-1">✓</span>
+                                    <span class="text-zinc-300">Pesquisa de público-alvo e mercado</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-indigo-400 text-xl mt-1">→</span>
+                                    <span class="text-zinc-300">Desenvolvimento da identidade visual (com designer)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">•</span>
+                                    <span class="text-zinc-400">Seleção de fornecedores e materiais</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="mt-6 p-4 bg-zinc-950 rounded-xl border border-zinc-800">
+                                <p class="text-sm text-indigo-400 mb-2">📍 Próximos Passos Imediatos:</p>
+                                <p class="text-sm text-zinc-400">Finalizar identidade visual e iniciar produção das primeiras peças piloto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 2: Próxima -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center font-bold text-zinc-500 text-xl">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-zinc-100 mb-4">Fase 2: Primeira Coleção & Lançamento</h3>
+                            <p class="text-zinc-400 text-sm mb-6">
+                                Fevereiro 2025 - Planejado
+                            </p>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Produção das peças piloto (camisetas, moletons)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Sessão fotográfica conceitual</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Lançamento nas redes sociais (Instagram primeiro)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Criação da loja online (Nuvemshop)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fase 3: Futuro -->
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <div class="flex items-start gap-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-zinc-800 rounded-full flex items-center justify-center font-bold text-zinc-500 text-xl">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-semibold text-zinc-100 mb-4">Fase 3: Expansão & Comunidade</h3>
+                            <p class="text-zinc-400 text-sm mb-6">
+                                Março 2025 em diante - Visão
+                            </p>
+                            
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Participação em eventos de moda local</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Colaborações com artistas e criadores</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Expansão para outros produtos (acessórios, itens especiais)</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-zinc-500 text-xl mt-1">→</span>
+                                    <span class="text-zinc-400">Desenvolvimento do lado audiovisual da marca</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- IDENTIDADE VISUAL -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Identidade Visual
+            </h2>
+            
+            <div class="bg-zinc-900 border border-zinc-800 p-8 rounded-2xl">
+                <div class="text-center">
+                    <div class="text-6xl mb-6" aria-hidden="true">🎨</div>
+                    <h3 class="text-xl font-semibold text-zinc-100 mb-4">Design em Desenvolvimento</h3>
+                    <p class="text-zinc-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                        A identidade visual da Súbita Studio está sendo cuidadosamente criada para representar nossa filosofia de momentos súbitos. Cores vibrantes, tipografia expressiva e elementos gráficos que contam histórias.
+                    </p>
+                    
+                    <!-- Paleta de Cores -->
+                    <div class="mt-8">
+                        <h4 class="text-sm text-zinc-400 mb-6">Paleta de Cores (Conceito Inicial)</h4>
+                        <div class="flex flex-wrap justify-center gap-4 mb-8">
+                            <div class="flex flex-col items-center">
+                                <div class="color-swatch w-16 h-16 rounded-xl bg-[#FF6B8B] mb-2 border-2 border-transparent"></div>
+                                <span class="text-xs text-zinc-400">#FF6B8B</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="color-swatch w-16 h-16 rounded-xl bg-[#36D1DC] mb-2 border-2 border-transparent"></div>
+                                <span class="text-xs text-zinc-400">#36D1DC</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="color-swatch w-16 h-16 rounded-xl bg-[#FFD166] mb-2 border-2 border-transparent"></div>
+                                <span class="text-xs text-zinc-400">#FFD166</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="color-swatch w-16 h-16 rounded-xl bg-[#1A1A2E] mb-2 border-2 border-zinc-800"></div>
+                                <span class="text-xs text-zinc-400">#1A1A2E</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="color-swatch w-16 h-16 rounded-xl bg-[#F8F9FA] mb-2 border-2 border-zinc-800"></div>
+                                <span class="text-xs text-zinc-400">#F8F9FA</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-zinc-500 max-w-md mx-auto">
+                            Cores vibrantes que representam energia, criatividade e momentos inesperados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTRATÉGIA DIGITAL -->
+        <div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                Estratégia Digital
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <h3 class="font-semibold mb-6 text-indigo-400 text-lg">Presença Online</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 font-bold text-xl mt-1">#</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Instagram</span>
+                                <p class="text-sm text-zinc-400">Plataforma principal para construção de comunidade e storytelling visual.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-indigo-400 font-bold text-xl mt-1">#</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Nuvemshop</span>
+                                <p class="text-sm text-zinc-400">E-commerce simples e eficiente para lançamento e vendas iniciais.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+                    <h3 class="font-semibold mb-6 text-purple-400 text-lg">Futuro Digital</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-400 font-bold text-xl mt-1">#</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Site Institucional</span>
+                                <p class="text-sm text-zinc-400">HTML + Tailwind para contar a história da marca de forma imersiva.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-purple-400 font-bold text-xl mt-1">#</span>
+                            <div>
+                                <span class="font-semibold text-zinc-100 block mb-1">Conteúdo Audiovisual</span>
+                                <p class="text-sm text-zinc-400">Por trás das cenas, processos criativos, histórias de clientes.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-12 text-center mt-24">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Quer acompanhar a jornada da Súbita?
+            </h2>
+            <p class="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Esta marca está nascendo agora. Em breve teremos novidades, primeiras peças e histórias para compartilhar.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#" 
+                   class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-lg transition">
+                    Instagram (Em Breve)
+                </a>
+                <a href="../projects/index.html" 
+                   class="px-8 py-4 border border-zinc-700 text-zinc-100 hover:bg-zinc-800 rounded-lg transition">
+                    Ver outros projetos
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <!-- 
+  COMPONENTE: Footer
+  Responsabilidade: Rodapé do site
+  Reutilizado em: Todas as páginas
+-->
+
+<footer class="border-t border-zinc-800 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid md:grid-cols-3 gap-12 mb-8">
+            
+            <div>
+                <div class="text-xl font-bold text-white mb-4">ANDRYW RUHAN</div>
+                <p class="text-zinc-400 mb-4 leading-relaxed">
+                    Desenvolvedor Python em formação · Foco em Back-end.
+                </p>
+                <p class="text-sm text-zinc-400">Curitiba, PR · Brasil</p>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">NAVEGAÇÃO</h3>
+                <ul class="space-y-2">
+                    <li><a href="/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                    <li><a href="/pages/projects/index.html" class="text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                    <li><a href="/about.html" class="text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                    <li><a href="/contact.html" class="text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-sm font-semibold text-white mb-4">SOCIAL</h3>
+                <ul class="space-y-2">
+                    <li><a href="https://github.com/andrywRD" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-indigo-400 transition">GitHub</a></li>
+                    <li><a href="mailto:andrywruhandavid@gmail.com" class="text-zinc-400 hover:text-indigo-400 transition">Email</a></li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="border-t border-zinc-800 pt-8 text-center">
+            <p class="text-sm text-zinc-400">© 2026 Andryw Ruhan · Súbita Studio</p>
+        </div>
+        
+    </div>
+</footer>
+
+    <!-- JAVASCRIPT -->
+    
+    <script src="/src/scripts/navigation.js" defer></script>
+    <script src="/src/scripts/utils.js" defer></script>
+</body>
+</html>

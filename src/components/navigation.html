@@ -1,0 +1,40 @@
+<!-- 
+  COMPONENTE: Navigation
+  Responsabilidade: Header e menu de navegação
+  Reutilizado em: Todas as páginas
+-->
+
+<header class="fixed top-0 w-full bg-zinc-950/90 backdrop-blur-sm border-b border-zinc-800 z-50">
+    <nav class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="/index.html" class="text-xl font-bold text-white hover:text-indigo-400 transition">
+                AR
+            </a>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8">
+                <li><a href="/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="home">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="projects">Projetos</a></li>
+                <li><a href="/about.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="about">Sobre</a></li>
+                <li><a href="/contact.html" class="nav-link text-zinc-400 hover:text-indigo-400 transition" data-page="contact">Contato</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-zinc-800 rounded-lg transition" aria-label="Menu">
+                <svg class="w-6 h-6 text-zinc-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <ul class="pt-4 pb-2 space-y-2 border-t border-zinc-800 mt-4">
+                <li><a href="/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Início</a></li>
+                <li><a href="/pages/projects/index.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Projetos</a></li>
+                <li><a href="/about.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Sobre</a></li>
+                <li><a href="/contact.html" class="block py-2 text-zinc-400 hover:text-indigo-400 transition">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
