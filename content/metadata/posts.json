@@ -1,0 +1,66 @@
+{
+  "posts": [
+    {
+      "id": "minha-jornada-7-meses-aprendendo-a-programar-com-ia",
+      "title": "Minha Jornada: 7 Meses Aprendendo a Programar com IA",
+      "slug": "minha-jornada-7-meses-aprendendo-a-programar-com-ia",
+      "description": "Apresentando minha trajetoria na programação com a IA",
+      "author": "Andryw Ruhan",
+      "date": "2026-01-29",
+      "readTime": "4 min",
+      "category": "Inteligencia Artificial",
+      "tags": [
+        "IA",
+        "programação",
+        "desenvolvimento"
+      ],
+      "coverImage": "/src/assets/blog/covers/ideograma_ia_post.jpg",
+      "published": true,
+      "featured": true,
+      "filePath": "content\\posts\\2026-01-26-apresentação.md"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Desenvolvimento",
+      "slug": "desenvolvimento",
+      "color": "#6366f1",
+      "description": "Artigos sobre desenvolvimento de software"
+    },
+    {
+      "name": "Python",
+      "slug": "python",
+      "color": "#3b82f6",
+      "description": "Programação Python e boas práticas"
+    },
+    {
+      "name": "Arquitetura",
+      "slug": "arquitetura",
+      "color": "#8b5cf6",
+      "description": "Design patterns e arquitetura de software"
+    },
+    {
+      "name": "Tutorial",
+      "slug": "tutorial",
+      "color": "#10b981",
+      "description": "Tutoriais práticos passo a passo"
+    }
+  ],
+  "tags": [
+    "python",
+    "clean-code",
+    "solid",
+    "boas-praticas",
+    "tutorial",
+    "arquitetura",
+    "design-patterns",
+    "javascript",
+    "node.js",
+    "vercel"
+  ],
+  "metadata": {
+    "lastUpdated": "2026-01-29",
+    "totalPosts": 1,
+    "version": "1.0.0"
+  }
+}

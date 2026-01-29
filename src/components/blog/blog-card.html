@@ -1,0 +1,23 @@
+<!-- Blog Card Component -->
+<article class="blog-card group cursor-pointer transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+  <!-- Cover Image -->
+  <div class="blog-card__image-wrapper overflow-hidden rounded-t-lg h-48 bg-zinc-800">
+    <img 
+      src="/src/assets/blog/covers/ideograma_ia_post.jpg" 
+      alt="{{title}}"
+      class="blog-card__image w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+      loading="lazy"
+    >
+  </div>
+        
+    <!-- Title -->
+    <h3 class="blog-card__title text-2xl font-bold text-zinc-50 mb-3 group-hover:text-indigo-400 transition-colors">
+      {{title}}
+    </h3>
+    
+    <!-- Description -->
+    <p class="blog-card__description text-zinc-300 mb-4 line-clamp-3">
+      {{description}}
+    </p>
+    
+</article>

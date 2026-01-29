@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags (Dinâmicos via JS) -->
+  <title id="category-title">Categoria - Blog Andryw Ruhan</title>
+  <meta name="description" content="" id="category-description">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/src/assets/images/favicon-16x16.png" type="image/png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../../src/styles/main.css">
+  <link rel="stylesheet" href="../../src/styles/blog/blog.css">
+</head>
+<body class="bg-zinc-950 text-zinc-50 min-h-screen">
+  
+  <!-- Navigation -->
+  <!-- @include navigation -->
+  
+  <!-- Category Header -->
+  <header class="category-header py-16 px-4 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900">
+    <div class="container mx-auto max-w-6xl">
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumbs mb-6 text-sm text-zinc-400">
+        <a href="/index.html" class="hover:text-indigo-400 transition-colors">Home</a>
+        <span class="mx-2">/</span>
+        <a href="/pages/blog/index.html" class="hover:text-indigo-400 transition-colors">Blog</a>
+        <span class="mx-2">/</span>
+        <span id="breadcrumb-category" class="text-zinc-500"></span>
+      </nav>
+      
+      <!-- Title -->
+      <h1 id="category-main-title" class="text-5xl md:text-6xl font-bold text-zinc-50 mb-4">
+        Carregando...
+      </h1>
+      
+      <!-- Description -->
+      <p id="category-description-text" class="text-xl text-zinc-400 max-w-3xl">
+        
+      </p>
+      
+      <!-- Post Count -->
+      <p class="mt-4 text-zinc-500">
+        <span id="category-post-count">0</span> posts nesta categoria
+      </p>
+    </div>
+  </header>
+  
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-16 max-w-7xl">
+    <!-- Posts Grid -->
+    <div class="blog-grid" id="category-posts-grid">
+      <div class="text-center py-12 col-span-full">
+        <p class="text-zinc-400 text-lg">Carregando posts...</p>
+      </div>
+    </div>
+    
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden text-center py-12">
+      <svg class="w-24 h-24 mx-auto mb-4 text-zinc-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+      <h3 class="text-2xl font-bold text-zinc-400 mb-2">Nenhum post encontrado</h3>
+      <p class="text-zinc-500">Nenhum post publicado nesta categoria ainda</p>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <!-- @include footer -->
+  
+  <!-- Scripts -->
+  <script src="../../src/scripts/blog/blog-category-loader.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      BlogCategoryLoader.init();
+    });
+  </script>
+</body>
+</html>
