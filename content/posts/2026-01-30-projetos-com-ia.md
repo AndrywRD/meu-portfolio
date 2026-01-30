@@ -6,7 +6,7 @@ tags: [IA, projetos, desenvolvimento, TypeScript, Next.js]
 description: "Jogos, bots, landing pages e um studio criativo — como IA me ajudou (e às vezes atrapalhou) a construir projetos que jamais faria sozinho"
 coverImage: /src/assets/blog/covers/projetos-ia.jpg
 author: Andryw Ruhan
-published: false
+published: true
 featured: true
 ---
 
