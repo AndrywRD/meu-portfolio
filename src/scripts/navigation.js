@@ -2,6 +2,7 @@
  * MÓDULO: Navegação
  * Responsabilidade: Gerenciar comportamento do menu
  * Princípio SRP: Apenas lógica de navegação
+ * VERSÃO CORRIGIDA: Garantia de carregamento do DOM
  */
 
 class Navigation {
@@ -13,14 +14,25 @@ class Navigation {
   }
 
   /**
-   * Inicializa o módulo
+   * Inicializa o módulo - VERSÃO CORRIGIDA
    */
   init() {
-    // Aguarda DOM estar pronto
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', () => this.setup());
-    } else {
+    // Função de inicialização
+    const initialize = () => {
+      console.log('🚀 Inicializando Navigation...');
       this.setup();
+      console.log('✅ Navigation inicializado com sucesso!');
+    };
+
+    // Garante que DOM está pronto
+    if (document.readyState === 'loading') {
+      console.log('⏳ Aguardando DOM...');
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initialize, 50);
+      });
+    } else {
+      console.log('✅ DOM já carregado');
+      setTimeout(initialize, 50);
     }
   }
 
@@ -29,6 +41,21 @@ class Navigation {
    */
   setup() {
     this.cacheElements();
+    
+    // Verifica se elementos existem
+    if (!this.mobileMenuBtn || !this.mobileMenu) {
+      console.error('❌ Elementos do menu não encontrados!', {
+        button: this.mobileMenuBtn,
+        menu: this.mobileMenu
+      });
+      return;
+    }
+    
+    console.log('✅ Elementos encontrados:', {
+      button: !!this.mobileMenuBtn,
+      menu: !!this.mobileMenu
+    });
+    
     this.attachEventListeners();
     this.setActivePage();
   }
@@ -40,18 +67,30 @@ class Navigation {
     this.mobileMenuBtn = document.getElementById('mobile-menu-btn');
     this.mobileMenu = document.getElementById('mobile-menu');
     this.navLinks = document.querySelectorAll('.nav-link');
+    
+    console.log('📦 Elementos cacheados:', {
+      button: !!this.mobileMenuBtn,
+      menu: !!this.mobileMenu,
+      linksCount: this.navLinks.length
+    });
   }
 
   /**
    * Anexa event listeners - COM SUPORTE A TOUCH
    */
   attachEventListeners() {
-    if (!this.mobileMenuBtn || !this.mobileMenu) return;
+    if (!this.mobileMenuBtn || !this.mobileMenu) {
+      console.error('❌ Não foi possível anexar listeners - elementos não existem');
+      return;
+    }
+
+    console.log('🔗 Anexando event listeners...');
 
     // Toggle menu mobile - suporte a click e touch
     const handleToggle = (e) => {
       e.preventDefault();
       e.stopPropagation();
+      console.log('🎯 Toggle acionado!');
       this.toggleMobileMenu();
     };
 
@@ -74,6 +113,8 @@ class Navigation {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => this.handleAnchorClick(e));
     });
+
+    console.log('✅ Event listeners anexados com sucesso!');
   }
 
   /**
@@ -82,8 +123,10 @@ class Navigation {
   toggleMobileMenu() {
     this.mobileMenu.classList.toggle('active');
     
-    // Acessibilidade: atualizar aria-expanded
     const isExpanded = this.mobileMenu.classList.contains('active');
+    console.log('📱 Menu toggled:', isExpanded ? 'ABERTO' : 'FECHADO');
+    
+    // Acessibilidade: atualizar aria-expanded
     this.mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
   }
 
@@ -91,6 +134,7 @@ class Navigation {
    * Fecha menu mobile
    */
   closeMobileMenu() {
+    console.log('🔒 Fechando menu...');
     this.mobileMenu.classList.remove('active');
     this.mobileMenuBtn.setAttribute('aria-expanded', 'false');
   }
@@ -177,8 +221,16 @@ class Navigation {
   }
 }
 
-// Inicializar módulo
-const navigation = new Navigation();
+// GARANTIR que só inicializa após DOM estar pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('📄 DOMContentLoaded disparado, criando Navigation...');
+    window.navigation = new Navigation();
+  });
+} else {
+  console.log('📄 DOM já estava pronto, criando Navigation...');
+  window.navigation = new Navigation();
+}
 
 // Exportar para uso em outros módulos (se necessário)
 if (typeof module !== 'undefined' && module.exports) {
