@@ -98,15 +98,37 @@ section {
    Responsabilidade: Elementos reutilizáveis
    ======================================== */
 
+/* Mobile Menu Button - Área de toque otimizada */
+#mobile-menu-btn {
+  min-width: 44px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* Mobile Menu */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-base);
+  transition: max-height 0.3s ease-in-out;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobile-menu.active {
   max-height: 500px;
+}
+
+/* Links do menu mobile - área de toque melhorada */
+.mobile-menu a {
+  display: block;
+  padding: 0.75rem 0;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Cards */
@@ -135,6 +157,9 @@ section {
   border-radius: var(--radius-sm);
   font-weight: 500;
   transition: background-color var(--transition-fast);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn-primary:hover {
@@ -147,6 +172,9 @@ section {
   padding: 0.75rem 2rem;
   border-radius: var(--radius-sm);
   transition: background-color var(--transition-fast);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn-secondary:hover {
@@ -204,4 +232,50 @@ section {
 /* Desktop */
 @media (min-width: 1024px) {
   /* Ajustes específicos para telas grandes */
+}
+
+
+/* ========================================
+   7. MOBILE TOUCH IMPROVEMENTS
+   Responsabilidade: Otimizações para dispositivos touch
+   ======================================== */
+
+/* Remover highlight azul do iOS/Android em elementos interativos */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Melhorar área de toque em links */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Prevenir zoom duplo-toque no iOS */
+@media (max-width: 767px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth scroll otimizado para mobile */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Desabilitar smooth scroll para quem prefere movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
